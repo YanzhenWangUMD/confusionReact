@@ -1,7 +1,7 @@
 
 import React from 'react';
-import {Card,CardImg, CardBody,CardTitle,CardText} from 'reactstrap';
-
+import {Card,CardImg, CardBody,CardTitle,CardText, BreadcrumbItem, Breadcrumb} from 'reactstrap';
+import {Link} from 'react-router-dom';
 
    const RenderDish =({dish}) => {
         if (dish != null)
@@ -46,12 +46,23 @@ import {Card,CardImg, CardBody,CardTitle,CardText} from 'reactstrap';
             return(   
                 <div className="container" >
                     <div className="row">
+                        <Breadcrumb>
+
+                            <BreadcrumbItem> <Link to='/menu'>Menu</Link></BreadcrumbItem>
+                            <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
+                        </Breadcrumb>
+                    </div>
+                    <div className="col-12">
+                        <h3>{props.dish.name}</h3>
+                        <hr/>
+                    </div>
+                    <div className="row">
                         <div className="col-12 col-md-5 m-1">
                         <RenderDish dish={props.dish}></RenderDish>
                         </div>
                     <div className="col-12 col-md-5 m-1">
                             <h1>Comments</h1>
-                            <RederComments comments ={props.dish.comments}></RederComments>
+                            <RederComments comments ={props.comments}></RederComments>
                     </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BreadcrumbItem, Breadcrumb, Button, Label, FormGroup, Col, Row,} from 'reactstrap';
+import {BreadcrumbItem, Breadcrumb, Button, Label, Col, Row,} from 'reactstrap';
 import { Control ,LocalForm, Errors } from 'react-redux-form';
 import {Link} from 'react-router-dom';
 
@@ -14,72 +14,13 @@ const validEmail = (val) => /^[A-Z0-9.%+-]+ @[A-Z0-9.] + \.[A-Z]{2,4}$/i.test(va
 class Contact extends Component {
     constructor(props){
         super(props);
-
-        // this.state = {
-        //     firstname: '',
-        //     lastname: '',
-        //     telnum: '',
-        //     email: '',
-        //     agree: false,
-        //     contactType: 'Tel',
-        //     message: '',
-        //     touched: {
-        //         firstname: false,
-        //         lastname: false, 
-        //         telnum: false,
-        //         email: false
-        //     }
-        // }
         this.handleSummit = this.handleSummit.bind(this);
     }
 
-    // handleInputChange(event){
-    //     const target = event.target;
-    //     const value = target.type === 'checkbox' ? target.checked: target.value;
-    //     const name = target.name;
-
-    //     this.setState({
-    //         [name]: value
-    //     })
-    // }
     handleSummit(values){
         console.log("current state is " + JSON.stringify(values));
         alert("Current state is : " + JSON.stringify(values));
     }
-
-    // handleBlur = (field) =>(evt)=>{
-    //     this.setState({
-    //         touched: {... this.state.touched, [field]: true}
-    //     });
-    // }
-
-    // validate(firstname, lastname, telnum, email){
-    //     const errors = {
-    //         firstname: '',
-    //         lastname: '',
-    //         telnum: '',
-    //         email: ''
-    //     };
-
-    //     if (this.state.touched.firstname && firstname.length < 3)
-    //         errors.firstname = 'First Name should be >= 3 characters';
-    //     else if (this.state.touched.firstname && firstname.length > 10)
-    //         errors.firstname = 'First Name should be <= 10 characters';
-
-    //     if (this.state.touched.lastname && lastname.length < 3)
-    //         errors.lastname = 'Last Name should be >= 3 characters';
-    //     else if (this.state.touched.lastname && lastname.length > 10)
-    //         errors.lastname = 'Last Name should be <= 10 characters';
-
-    //     const reg = /^\d+$/;
-    //     if (this.state.touched.telnum && !reg.test(telnum))
-    //         errors.telnum = 'Tel. Number should contain only numbers';
-            
-    //     if (this.state.touched.email && email.split('').filter(x => x === '@').length !== 1) 
-    //         errors.email = 'Email should contain a @';
-
-    //     return errors;
-    // }
     render(){
         return(
             <div className="container">
